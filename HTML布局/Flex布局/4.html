@@ -1,0 +1,54 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-06-26 20:05:11
+ * @LastEditTime: 2020-06-26 20:18:40
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \前端知识总结\HTML布局\Flex布局\4.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            /* 给父级添加flex属性 */
+            display: flex;
+            width: 800px;
+            height: 300px;
+            background-color: pink;
+            /* flex-wrap: wrap; */
+            /* 因为有了换行，此时侧轴上的控制子元素的数量的对齐方式我们用 align-content */
+            /* align-content: flex-start; */
+            /* align-content: center; */
+            /* align-content: space-between; */
+            /* 一个贴上沿 一个下沿 */
+            /* align-content: space-around; */
+            flex-flow: column wrap;
+            /* 把设置主轴和是否换行简写成为flex-flow */
+        }
+        
+        .box span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </div>
+</body>
+
+</html>

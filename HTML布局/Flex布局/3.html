@@ -1,0 +1,52 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-06-25 22:55:55
+ * @LastEditTime: 2020-06-26 20:15:18
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \前端知识总结\HTML布局\Flex布局\3.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            /* 给父级添加flex属性 */
+            display: flex;
+            width: 800px;
+            height: 300px;
+            background-color: pink;
+            flex-direction: row;
+            /* flex-wrap: nowrap; */
+            /* 默认不换行 */
+            /* flex-wrap: wrap; */
+            /* 自动换行 */
+            /* justify-content: center; */
+            align-items: center;
+            /* 侧轴居中  单行也可以使用*/
+            align-items: flex-start
+        }
+        
+        .box span {
+            width: 200px;
+            height: 100px;
+            background-color: purple;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+
+    </div>
+</body>
+
+</html>
