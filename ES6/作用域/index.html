@@ -1,0 +1,54 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-04 12:02:11
+ * @LastEditTime: 2020-07-04 15:26:22
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \前端知识总结\ES6\作用域\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button .active {
+            background: yellow;
+        }
+        
+        p {
+            display: none
+        }
+        
+        p.active {
+            display: block
+        }
+    </style>
+</head>
+
+<body>
+    <button class="active">选项1</button>
+    <button>选项2</button>
+    <button>选项3</button>
+    <p class="active">内容1</p>
+    <p>内容2</p>
+    <p>内容3</p>
+
+
+    <script>
+        var btn = document.querySelectorAll('button');
+        var ps = document.querySelectorAll('p')
+
+        for (let i = 0; i < btn.length; i++) {
+            btn[i].index = i;
+            btn[i].onclick = function() {
+                console.log(i);
+
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-09 15:34:11
+ * @LastEditTime: 2020-07-09 16:29:00
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \前端知识总结\ES6\Promise\手写Promise\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./Promise.js"></script>
+  <script>
+    const p = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(1);
+        console.log('reject()改变状态之后');
+        
+      },1000)
+      // reject(2)
+    })
+    p.then(
+      value => {
+        console.log('onResolve1()', value);
+
+      },
+      reason => {
+        console.log('onRejected()', reason);
+
+      }
+    ),
+      p.then(
+        value => {
+          console.log('onResolve2()', value);
+
+        },
+        reason => {
+          console.log('onRejected2()', reason);
+
+        }
+      )
+  </script>
+</body>
+
+</html>

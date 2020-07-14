@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-25 22:06:09
- * @LastEditTime: 2020-06-25 22:37:56
+ * @LastEditTime: 2020-06-29 19:26:25
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \前端知识总结\HTML布局\Flex布局\readme.md
@@ -26,5 +26,8 @@
   align-content:设置侧轴上的子元素排列方式
   align-items:设置侧轴上的子元素排列方式
   flex-flow：复合属性，相当于同时设置了flex-direction和flex-warp
+
+  align-self 脱离组织 自己对齐
+  order 类似于z-index 
 
  

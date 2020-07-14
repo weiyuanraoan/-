@@ -1,0 +1,85 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-08 10:17:44
+ * @LastEditTime: 2020-07-08 11:13:33
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \前端知识总结\前端优化\防抖节流\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #wrap {
+      width: 30%;
+      height: 30%;
+      background-color: #f00;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+  </div>
+  <script>
+
+    let owarp = document.getElementById('wrap')
+
+    // 节流
+    function throttle(fn, duration) {
+      let timer = 0;
+      return function (...args) {
+        let _self = this;
+        if (timer) {
+          return;
+        }
+        fn.apply(_self, args)
+        timer = setTimeout(() => {
+          clearTimeout(timer);
+          timer = 0;
+        }, duration)
+      }
+    }
+
+    function debounce(fn,duration){
+      let timer = 0;
+      return function(...args){
+        let _self = this;
+        clearTimeout(timer);
+        timer = setTimeout(()=>{
+          fn.apply(_self,args);
+        },duration)
+      }
+    }
+
+    move = function (e) {
+      console.log(e, this);
+
+    }
+    // owarp.addEventListener("mousemove", throttle(move))
+    owarp.addEventListener("mousemove", debounce(move,1000))
+    // owarp.addEventListener("mousemove", move)
+
+
+  </script>
+
+</body>
+
+</html>
